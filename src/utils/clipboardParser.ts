@@ -28,9 +28,9 @@ function parseHtmlToSegments(html: string): TextSegment[] {
   const doc = parser.parseFromString(html, 'text/html');
   const segments: TextSegment[] = [];
 
-  function extractColorFromElement(element: Element): string {
+  function extractColorFromElement(element: Element): string | null {
     // Check inline style first
-    const inlineColor = element.style?.color;
+    const inlineColor = (element as HTMLElement).style?.color;
     if (inlineColor) {
       try {
         return normalizeColor(inlineColor);
@@ -78,7 +78,7 @@ function parseHtmlToSegments(html: string): TextSegment[] {
     } else if (node.nodeType === Node.ELEMENT_NODE) {
       const element = node as Element;
       const elementColor = extractColorFromElement(element);
-      const currentColor = elementColor || inheritedColor;
+      const currentColor = elementColor ?? inheritedColor;
 
       for (const child of Array.from(node.childNodes)) {
         traverseNode(child, currentColor);
