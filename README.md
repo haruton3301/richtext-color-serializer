@@ -2,6 +2,8 @@
 
 スプレッドシートや文書の色付きテキストをXMLタグに変換するWebアプリケーション
 
+**🌐 ライブデモ**: [http://richtext-color-serializer.vercel.app/](http://richtext-color-serializer.vercel.app/)
+
 ## 🌟 機能
 
 - **色付きテキストの自動検出**: クリップボードからリッチテキストを解析し、色情報を抽出

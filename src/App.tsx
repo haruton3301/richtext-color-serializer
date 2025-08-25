@@ -2,6 +2,7 @@ import type { ColorMapping } from './types';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { ColorMappingForm } from './components/ColorMappingForm';
 import { TextProcessor } from './components/TextProcessor';
+import { Footer } from './components/Footer';
 import { LOCAL_STORAGE_KEY, UI_TEXT } from './constants';
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <TextProcessor colorMappings={colorMappings} />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
