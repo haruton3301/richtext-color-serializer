@@ -4,8 +4,7 @@ export const LOCAL_STORAGE_KEY = 'richtext-color-mappings';
 export const VALIDATION_MESSAGES = {
   INVALID_HEX_COLOR: '有効な16進カラーコードを入力してください（例：#ff0000）',
   EMPTY_TAG_NAME: 'タグ名を入力してください',
-  INVALID_TAG_NAME:
-    'タグ名は英字で始まり、英数字とハイフンのみ使用できます',
+  INVALID_TAG_NAME: 'タグ名は英字で始まり、英数字とハイフンのみ使用できます',
 } as const;
 
 export const ERROR_MESSAGES = {

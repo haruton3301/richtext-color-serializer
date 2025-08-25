@@ -66,7 +66,7 @@ export function ColorMappingForm({
             type="submit"
             className="px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors"
           >
-{UI_TEXT.BUTTONS.ADD_MAPPING}
+            {UI_TEXT.BUTTONS.ADD_MAPPING}
           </button>
         </div>
       </form>
@@ -99,7 +99,7 @@ export function ColorMappingForm({
                   onClick={() => onRemove(mapping.id)}
                   className="text-red-600 hover:text-red-800 focus:outline-none"
                 >
-{UI_TEXT.BUTTONS.REMOVE}
+                  {UI_TEXT.BUTTONS.REMOVE}
                 </button>
               </div>
             ))}

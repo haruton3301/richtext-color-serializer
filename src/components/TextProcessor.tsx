@@ -96,14 +96,16 @@ export function TextProcessor({ colorMappings }: TextProcessorProps) {
             disabled={isLoading}
             className="px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors disabled:opacity-50"
           >
-{isLoading ? UI_TEXT.BUTTONS.PROCESSING : UI_TEXT.BUTTONS.PASTE_FROM_CLIPBOARD}
+            {isLoading
+              ? UI_TEXT.BUTTONS.PROCESSING
+              : UI_TEXT.BUTTONS.PASTE_FROM_CLIPBOARD}
           </button>
 
           <button
             onClick={handleTestData}
             className="px-4 py-2 bg-amber-600 text-white rounded-md hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 transition-colors"
           >
-{UI_TEXT.BUTTONS.LOAD_TEST_DATA}
+            {UI_TEXT.BUTTONS.LOAD_TEST_DATA}
           </button>
         </div>
 
@@ -124,7 +126,7 @@ export function TextProcessor({ colorMappings }: TextProcessorProps) {
               onClick={copyToClipboard}
               className="px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors"
             >
-{UI_TEXT.BUTTONS.COPY}
+              {UI_TEXT.BUTTONS.COPY}
             </button>
           </div>
           <pre className="bg-white p-4 rounded border border-green-200 text-sm font-mono overflow-x-auto whitespace-pre-wrap">
