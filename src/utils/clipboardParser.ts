@@ -68,7 +68,7 @@ function parseHtmlToSegments(html: string): TextSegment[] {
   function traverseNode(node: Node, inheritedColor = '#000000') {
     if (node.nodeType === Node.TEXT_NODE) {
       const text = node.textContent;
-      if (text && text.trim()) {
+      if (text) {
         segments.push({
           text: text,
           color: inheritedColor,
@@ -80,6 +80,15 @@ function parseHtmlToSegments(html: string): TextSegment[] {
       const elementColor = extractColorFromElement(element);
       const currentColor = elementColor ?? inheritedColor;
 
+      // Handle line breaks explicitly
+      if (element.tagName.toLowerCase() === 'br') {
+        segments.push({
+          text: '\n',
+          color: inheritedColor,
+          isDefault: inheritedColor === '#000000',
+        });
+      }
+
       for (const child of Array.from(node.childNodes)) {
         traverseNode(child, currentColor);
       }
@@ -87,7 +96,7 @@ function parseHtmlToSegments(html: string): TextSegment[] {
   }
 
   traverseNode(doc.body);
-  return segments.filter((segment) => segment.text.trim().length > 0);
+  return segments.filter((segment) => segment.text.length > 0);
 }
 
 export function simulateClipboardData(htmlContent: string): TextSegment[] {

@@ -52,9 +52,9 @@ export function TextProcessor({ colorMappings }: TextProcessorProps) {
 
   const handleTestData = () => {
     const testHtml = `
-      <span style="color: #000000;">This is normal text. </span>
-      <span style="color: #d97706;">This is amber text. </span>
-      <span style="color: #dc2626;">This is red text. </span>
+      <span style="color: #000000;">This is normal text.</span><br>
+      <span style="color: #d97706;">This is amber text.</span><br>
+      <span style="color: #dc2626;">This is red text.</span><br>
       <span style="color: #000000;">Back to normal.</span>
     `;
 
