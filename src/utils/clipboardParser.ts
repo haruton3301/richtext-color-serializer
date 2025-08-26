@@ -87,6 +87,7 @@ function parseHtmlToSegments(html: string): TextSegment[] {
           color: inheritedColor,
           isDefault: inheritedColor === '#000000',
         });
+        return; // Skip processing children for br tags
       }
 
       for (const child of Array.from(node.childNodes)) {

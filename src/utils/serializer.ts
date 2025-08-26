@@ -9,6 +9,11 @@ export function serializeTextSegments(
 
   return segments
     .map((segment) => {
+      // Don't wrap line breaks and whitespace-only content with tags
+      if (segment.text === '\n' || segment.text.trim() === '') {
+        return segment.text;
+      }
+
       if (colorsMatch(segment.color, defaultColor)) {
         return segment.text;
       }
